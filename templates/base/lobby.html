@@ -1,0 +1,68 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+<main>
+    <section id="form-container">
+        <img id="logo" src="{% static 'images/chat-icon.png' %}" alt="Chat Icon">
+
+        <div id="welcome-message">
+            <h1>Welcome To My Chat</h1>
+            <p>A Group Video Calling Application Just For You</p>
+        </div>
+
+        <form id="form">
+            <div class="text-center form-field">
+                <input type="text" name="room" placeholder="Enter a room name..." style="text-transform: uppercase;" required />
+            </div>
+
+            <div class="text-center form-field">
+                <input type="text" name="username" placeholder="Enter Your Name..." required />
+            </div>
+
+            <div class="text-center form-field">
+                <input type="submit" value="Join Stream" />
+            </div>
+        </form>
+    </section>
+</main>
+
+<script type="text/javascript">
+    // Form submission and token fetching logic
+    const form = document.getElementById('form');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const room = e.target.room.value.trim().toUpperCase(); // Uppercase for consistency
+        const name = e.target.username.value.trim();
+
+        if (!room || !name) {
+            alert("Room name and username are required.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`/get_token/?channel=${room}`);
+            if (!response.ok) throw new Error("Failed to fetch token.");
+
+            const data = await response.json();
+
+            // Store necessary information in session storage
+            sessionStorage.setItem('UID', data.uid);
+            sessionStorage.setItem('token', data.token);
+            sessionStorage.setItem('room', room);
+            sessionStorage.setItem('name', name);
+
+            // Redirect to the room page
+            window.open('/room/', '_self');
+        } catch (error) {
+            console.error('Error fetching token:', error);
+            alert('Could not join the room. Please try again.');
+        }
+    };
+
+    form.addEventListener('submit', handleSubmit);
+</script>
+
+{% endblock %}
+

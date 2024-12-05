@@ -1,0 +1,283 @@
+/* General Navbar Styles */
+.custom-navbar {
+    background: linear-gradient(90deg, #4e54c8, #8f94fb); /* Gradient background */
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    display: flex;
+    justify-content: space-between; /* Ensure space between the brand and menu */
+    align-items: center; /* Vertically align items */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Aligns nav items to the right */
+    margin-left: auto; /* Pushes the nav links to the right side */
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-size: 1.3rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f9d423 !important; /* Bright hover color */
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    background: #000;
+    width: 18px;
+    height: 2px;
+}
+
+.navbar-toggler-icon::before {
+    top: 8px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: 8px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .custom-navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-link {
+        margin: 0.3rem 0;
+    }
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-links, .footer-social, .footer-info {
+    width: 30%;
+}
+
+.footer h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #f9d423; /* Yellow accent */
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #f9d423; /* Yellow accent */
+}
+
+.footer-social .social-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-social .social-icon {
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+    color: #f9d423; /* Hover effect */
+}
+
+.footer-info p {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .features-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links, .footer-social, .footer-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-social .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Add gap between the buttons */
+.btn-primary:first-child {
+    margin-right: 120px; /* Adds space after the first button */
+}
+
+.btn-primary:last-child {
+    margin-left: 120px; /* Adds space before the second button */
+}
+
+
+
+/* ------------------ Signup Form Container ------------------ */
+#signup-form-container {
+    height:120%;
+    width: 100%;
+    max-width: 500px; /* Max width for form */
+    background: linear-gradient(135deg, rgba(78, 84, 200, 0.7), rgba(143, 148, 251, 0.7));
+    color:#fff
+    padding: 80px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ------------------ Welcome Message ------------------ */
+#signup-welcome-message {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+#signup-welcome-message h1 {
+    font-size: 2.5em;
+    color: #fff; /* Primary accent color */
+}
+
+#signup-welcome-message p {
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+}
+
+/* ------------------ Form Fields ------------------ */
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.form-field input {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.form-field input[type="submit"] {
+    background-color: #4e54c8;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    width: 90%;
+    transition: background-color 0.3s ease;
+}
+
+.form-field input[type="submit"]:hover {
+    background-color: #3a46c0; /* Darker shade when hovering */
+}
+
+/* ------------------ Links ------------------ */
+#login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#login-link a {
+    color: #4e54c8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------ Responsive Design ------------------ */
+@media screen and (max-width: 480px) {
+    #signup-form-container {
+        width: 90%; /* Reduce width for small screens */
+        padding: 20px;
+    }
+
+    #signup-welcome-message h1 {
+        font-size: 2em; /* Adjust heading size */
+    }
+
+    .form-field label {
+        font-size: 16px;
+    }
+
+    .form-field input {
+        font-size: 14px;
+    }
+
+    .form-field input[type="submit"] {
+        font-size: 1em;
+    }
+}
+
+

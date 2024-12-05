@@ -1,0 +1,51 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+<div class="homepage-container">
+    <div class="welcome-section">
+        <h1>Welcome to My Chat App</h1>
+        <p>Connect with your friends and family effortlessly through our secure and user-friendly platform.</p>
+        <a href="{% url 'register' %}" class="btn btn-primary">Sign-up</a><a href="{% url 'login' %}" class="btn btn-primary">Sign-In</a>
+    </div>
+    <div class="features-section">
+        <div class="feature">
+            <h2>Secure Connections</h2>
+            <p>Enjoy end-to-end encrypted communication for a secure experience.</p>
+        </div>
+        <div class="feature">
+            <h2>High-Quality Video</h2>
+            <p>Experience smooth and high-definition video calls anytime, anywhere.</p>
+        </div>
+        <div class="feature">
+            <h2>Easy to Use</h2>
+            <p>Our intuitive design makes connecting simple and enjoyable for everyone.</p>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"> <i class="social-icon fab fa-facebook" title="Facebook"></i></a>
+                <a href="#"><i class="social-icon fab fa-twitter" title="Twitter"></i></a>
+                <a href="#"><i class="social-icon fab fa-instagram" title="Instagram"></i></a>
+                <a href="#"><i class="social-icon fab fa-linkedin" title="LinkedIn"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-info">
+            <p>&copy; 2024 My Chat App. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
